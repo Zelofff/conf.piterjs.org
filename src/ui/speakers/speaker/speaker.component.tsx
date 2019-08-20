@@ -1,4 +1,4 @@
-import {FC, memo} from 'react';
+import {FC} from 'react';
 import * as React from 'react';
 import styled from '@emotion/styled';
 import {Container} from '../../ui-kit/container/container.component';
@@ -64,7 +64,7 @@ interface SpeakerProps {
 	speaker: SpeakerTO;
 }
 
-export const Speaker: FC<SpeakerProps> = memo(({className, speaker}) => (
+export const Speaker: FC<SpeakerProps> = ({className, speaker}) => (
 	<SpeakerStyled className={className} id={speaker.id}>
 		<Container>
 			<PhotoWrapperStyled>
@@ -77,11 +77,11 @@ export const Speaker: FC<SpeakerProps> = memo(({className, speaker}) => (
 			</TextStyled>
 			<SocialButtons>
 				{speaker.socials.map(({name, link}) => (
-					<SocialStyled key={`${name}-${link}`} >
-						<Social type={name} link={link} about={`${speaker.firstName} ${speaker.lastName}`}/>
+					<SocialStyled key={`${name}-${link}`}>
+						<Social type={name} link={link} about={`${speaker.firstName} ${speaker.lastName}`} />
 					</SocialStyled>
 				))}
 			</SocialButtons>
 		</Container>
 	</SpeakerStyled>
-));
+);

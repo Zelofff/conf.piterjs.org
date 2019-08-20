@@ -1,4 +1,4 @@
-import {FC, memo} from 'react';
+import {FC} from 'react';
 import * as React from 'react';
 import {useStaticQuery, graphql} from 'gatsby';
 import {BlockHeading} from '../ui-kit/block-heading/block-heading.component';
@@ -73,7 +73,7 @@ const aboutQuery = graphql`
 	}
 `;
 
-export const About: FC<AboutProps> = memo(({className}) => {
+export const About: FC<AboutProps> = ({className}) => {
 	const {dataJson: data} = useStaticQuery(aboutQuery);
 	const event: EventTO = data.event;
 
@@ -94,4 +94,4 @@ export const About: FC<AboutProps> = memo(({className}) => {
 			</Container>
 		</AboutStyled>
 	);
-});
+};

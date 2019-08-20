@@ -1,4 +1,4 @@
-import {FC, memo} from 'react';
+import {FC} from 'react';
 import * as React from 'react';
 import {useStaticQuery, graphql} from 'gatsby';
 import styled from '@emotion/styled';
@@ -174,7 +174,7 @@ const footerQuery = graphql`
 	}
 `;
 
-export const Footer: FC<FooterProps> = memo(({className}) => {
+export const Footer: FC<FooterProps> = ({className}) => {
 	const {dataJson: data} = useStaticQuery(footerQuery);
 	const piterjs: PiterJSTO = data.piterjs;
 
@@ -201,4 +201,4 @@ export const Footer: FC<FooterProps> = memo(({className}) => {
 			</Container>
 		</FooterStyled>
 	);
-});
+};

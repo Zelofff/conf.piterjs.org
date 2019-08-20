@@ -1,4 +1,4 @@
-import {FC, memo} from 'react';
+import {FC} from 'react';
 import styled from '@emotion/styled';
 import * as React from 'react';
 import {mediaMd} from '../../../utils/css.utils';
@@ -30,9 +30,9 @@ const LinesStyled = styled(Lines)`
 `;
 //#endregion
 
-export const BlockHeading: FC<{className?: string}> = memo(({children, className}) => (
+export const BlockHeading: FC<{className?: string}> = ({children, className}) => (
 	<BlockHeadingStyled className={className}>
 		<LinesStyled />
 		{children}
 	</BlockHeadingStyled>
-));
+);

@@ -1,4 +1,4 @@
-import {FC, memo} from 'react';
+import {FC} from 'react';
 import styled from '@emotion/styled';
 import * as React from 'react';
 import {mediaLg, mediaMd} from '../../../utils/css.utils';
@@ -29,8 +29,8 @@ interface ContainerProps {
 	className?: string;
 }
 
-export const Container: FC<ContainerProps> = memo(({children, className}) => (
+export const Container: FC<ContainerProps> = ({children, className}) => (
 	<ContainerStyled className={className}>
 		<Context>{children}</Context>
 	</ContainerStyled>
-));
+);

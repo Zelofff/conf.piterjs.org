@@ -1,5 +1,5 @@
 import {Option} from 'fp-ts/lib/Option';
-import {FC, memo, useState, Fragment} from 'react';
+import {FC, useState, Fragment} from 'react';
 import styled from '@emotion/styled';
 import {mediaMd} from '../../../utils/css.utils';
 import * as React from 'react';
@@ -226,7 +226,7 @@ const emoji = [
 	'🦉',
 ];
 
-export const Article: FC<ArticleProps> = memo(({title, time, description, speaker}) => {
+export const Article: FC<ArticleProps> = ({title, time, description, speaker}) => {
 	// console.log(description, speaker);
 	const emptyArticle = !title;
 	const [isOpened, onIsOpenedChange] = useState(false);
@@ -275,4 +275,4 @@ export const Article: FC<ArticleProps> = memo(({title, time, description, speake
 			</ContentStyled>
 		</ArticleStyled>
 	);
-});
+};

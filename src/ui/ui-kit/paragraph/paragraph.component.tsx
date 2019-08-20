@@ -9,6 +9,6 @@ const ParagraphStyled = styled.p`
 `;
 //#endregion
 
-export const Paragraph: FC<{className?: string}> = memo(({className, children}) => (
+export const Paragraph: FC<{className?: string}> = ({className, children}) => (
 	<ParagraphStyled className={className}>{children}</ParagraphStyled>
-));
+);

@@ -1,4 +1,4 @@
-import {FC, memo} from 'react';
+import {FC} from 'react';
 import styled from '@emotion/styled';
 import * as React from 'react';
 import {mediaMd} from '../../../utils/css.utils';
@@ -41,8 +41,10 @@ interface MenuItemProps {
 	href: string;
 }
 
-export const MenuItem: FC<MenuItemProps> = memo(({children, className, href}) => (
+export const MenuItem: FC<MenuItemProps> = ({children, className, href}) => (
 	<ItemStyled className={className}>
-		<LinkStyled rel={'noopener noreferrer'} href={href}>{children}</LinkStyled>
+		<LinkStyled rel={'noopener noreferrer'} href={href}>
+			{children}
+		</LinkStyled>
 	</ItemStyled>
-));
+);

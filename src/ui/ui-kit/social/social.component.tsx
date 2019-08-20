@@ -1,4 +1,4 @@
-import {FC, Fragment, memo} from 'react';
+import {FC, Fragment} from 'react';
 import * as React from 'react';
 import {Icon} from '../icon/icon.component';
 import {
@@ -28,17 +28,16 @@ interface SocialProps {
 	about?: string;
 }
 
-export const Social: FC<SocialProps> = memo(({type, className, link, isFooter = false, about}) => (
+export const Social: FC<SocialProps> = ({type, className, link, isFooter = false, about}) => (
 	<SocialStyled
 		href={link}
 		className={className}
 		target={'_blank'}
 		aria-label={`Learn more on ${getSocialName(type)} about ${about || 'it'}`}
-		rel={'noopener noreferrer'}
-	>
+		rel={'noopener noreferrer'}>
 		<Icon svg={getIcon(isFooter, type)} />
 	</SocialStyled>
-));
+);
 
 function getIcon(isFooter: boolean, type: SocialType) {
 	if (isFooter) {
@@ -81,7 +80,6 @@ function getIcon(isFooter: boolean, type: SocialType) {
 			return Fragment;
 	}
 }
-
 
 function getSocialName(type: SocialType) {
 	switch (type) {

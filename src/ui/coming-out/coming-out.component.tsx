@@ -1,4 +1,3 @@
-import {memo} from 'react';
 import * as React from 'react';
 import styled from '@emotion/styled';
 import {constant} from 'fp-ts/lib/function';
@@ -25,10 +24,8 @@ const TextStyled = styled.span`
 `;
 //#endregion
 
-export const ComingOut = memo(
-	constant(
-		<ComingOutStyled>
-			<TextStyled>Coming soon</TextStyled>
-		</ComingOutStyled>,
-	),
+export const ComingOut = constant(
+	<ComingOutStyled>
+		<TextStyled>Coming soon</TextStyled>
+	</ComingOutStyled>,
 );

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {useStaticQuery, graphql} from 'gatsby';
-import {FC, memo} from 'react';
+import {FC} from 'react';
 import GoogleMapReact from 'google-map-react';
 import styled from '@emotion/styled';
 import {MapTO} from '../../view-models/data.view-model';
@@ -45,7 +45,7 @@ const mapQuery = graphql`
 	}
 `;
 
-export const Map: FC = memo(() => {
+export const Map: FC = () => {
 	const {dataJson: data} = useStaticQuery(mapQuery);
 	const map: MapTO = data.map;
 	const bootstrapURLKeys = {
@@ -60,4 +60,4 @@ export const Map: FC = memo(() => {
 			</GoogleMapReact>
 		</MapContainerStyled>
 	);
-});
+};

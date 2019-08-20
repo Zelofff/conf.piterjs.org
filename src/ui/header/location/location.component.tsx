@@ -1,4 +1,4 @@
-import {FC, memo} from 'react';
+import {FC} from 'react';
 import styled from '@emotion/styled';
 import * as React from 'react';
 
@@ -55,7 +55,7 @@ interface LocationProps {
 	};
 }
 
-export const Location: FC<LocationProps> = memo(({className, location}) => (
+export const Location: FC<LocationProps> = ({className, location}) => (
 	<LocationStyled className={className}>
 		<PointStyled />
 		<LinkStyled href={location.link} target={'_blank'} rel={'noopener noreferrer'}>
@@ -64,4 +64,4 @@ export const Location: FC<LocationProps> = memo(({className, location}) => (
 			{location.city}
 		</LinkStyled>
 	</LocationStyled>
-));
+);

@@ -1,4 +1,4 @@
-import {FC, memo} from 'react';
+import {FC} from 'react';
 import styled from '@emotion/styled';
 import * as React from 'react';
 import {Icon} from '../../ui-kit/icon/icon.component';
@@ -10,7 +10,7 @@ const IconStyled = styled(Icon)`
 	height: 50px;
 	background-color: var(--white);
 	flex-shrink: 0;
-	transition: all .2s ease-in;
+	transition: all 0.2s ease-in;
 
 	${mediaMdX} {
 		margin-right: 12px;
@@ -41,9 +41,9 @@ interface LogoProps {
 	className?: string;
 }
 
-export const Logo: FC<LogoProps> = memo(({className}) => (
+export const Logo: FC<LogoProps> = ({className}) => (
 	<LogoStyled className={className}>
 		<IconStyled svg={LogoIcon} />
 		<TextStyled>PiterJS conf</TextStyled>
 	</LogoStyled>
-));
+);

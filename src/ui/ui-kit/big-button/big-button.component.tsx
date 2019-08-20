@@ -1,4 +1,4 @@
-import {FC, memo} from 'react';
+import {FC} from 'react';
 import styled from '@emotion/styled';
 import * as React from 'react';
 import {mediaMd} from '../../../utils/css.utils';
@@ -64,12 +64,13 @@ interface BigButtonProps {
 	linkView?: boolean;
 }
 
-export const BigButton: FC<BigButtonProps> = memo(({linkParams, children, className, linkView}) =>
+export const BigButton: FC<BigButtonProps> = ({linkParams, children, className, linkView}) =>
 	linkView ? (
 		<BigButtonLinkStyled className={className} {...linkParams}>
 			{children}
 		</BigButtonLinkStyled>
 	) : (
-		<BigButtonStyled className={className} {...linkParams}>{children}</BigButtonStyled>
-	),
-);
+		<BigButtonStyled className={className} {...linkParams}>
+			{children}
+		</BigButtonStyled>
+	);

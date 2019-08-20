@@ -1,4 +1,4 @@
-import {FC, memo} from 'react';
+import {FC} from 'react';
 import * as React from 'react';
 import {useStaticQuery, graphql} from 'gatsby';
 import styled from '@emotion/styled';
@@ -97,7 +97,7 @@ const promoQuery = graphql`
 	}
 `;
 
-export const Promo: FC = memo(() => {
+export const Promo: FC = () => {
 	const {dataJson: data} = useStaticQuery(promoQuery);
 	const event: EventTO = data.event;
 
@@ -126,4 +126,4 @@ export const Promo: FC = memo(() => {
 			<Lines2Styled />
 		</PromoStyled>
 	);
-});
+};

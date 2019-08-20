@@ -1,4 +1,4 @@
-import {FC, memo} from 'react';
+import {FC} from 'react';
 import * as React from 'react';
 import {useStaticQuery, graphql} from 'gatsby';
 import {EventTO, ArticleTO, SpeakerTO} from '../../../view-models/data.view-model';
@@ -54,7 +54,7 @@ const scheduleQuery = graphql`
 	}
 `;
 
-export const Schedule: FC<ScheduleProps> = memo(({className}) => {
+export const Schedule: FC<ScheduleProps> = ({className}) => {
 	const {dataJson: data} = useStaticQuery(scheduleQuery);
 	const event: EventTO = data.event;
 	const articles: ArticleTO[] = data.articles;
@@ -86,4 +86,4 @@ export const Schedule: FC<ScheduleProps> = memo(({className}) => {
 			</Container>
 		</ScheduleStyled>
 	);
-});
+};

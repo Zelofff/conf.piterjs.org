@@ -1,4 +1,4 @@
-import {FC, memo} from 'react';
+import {FC} from 'react';
 import * as React from 'react';
 import {useStaticQuery, graphql} from 'gatsby';
 import {BlockHeading} from '../ui-kit/block-heading/block-heading.component';
@@ -65,7 +65,7 @@ const speakersQuery = graphql`
 	}
 `;
 
-export const Speakers: FC<SpeakersProps> = memo(({className}) => {
+export const Speakers: FC<SpeakersProps> = ({className}) => {
 	const {dataJson: data} = useStaticQuery(speakersQuery);
 	const speakers: SpeakerTO[] = data.speakers;
 
@@ -83,4 +83,4 @@ export const Speakers: FC<SpeakersProps> = memo(({className}) => {
 			</Container>
 		</SpeakersStyled>
 	);
-});
+};
